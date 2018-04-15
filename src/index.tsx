@@ -6,6 +6,7 @@ import { Route } from 'react-router'
 import { ConnectedRouter, routerMiddleware } from 'react-router-redux'
 import { applyMiddleware, createStore } from 'redux'
 
+import '../node_modules/normalize.css'
 import App from './App'
 import './css/index.css'
 import Counter from './ProjCounter/container/Counter'

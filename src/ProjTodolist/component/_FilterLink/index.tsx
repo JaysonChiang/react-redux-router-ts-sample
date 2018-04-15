@@ -12,15 +12,14 @@ const FilterLink = ({ active, onClick, children }: IProps) => {
         return <span>{children}</span>;
     }
     return (
-        <a
-            href=""
+        <button
             onClick={e => {
                 e.preventDefault();
                 onClick();
             }}
         >
             {children}
-        </a>
+        </button>
     );
 };
 
