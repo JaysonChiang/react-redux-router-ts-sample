@@ -9,7 +9,7 @@ This project was bootstrapped with [Create React App TypeScript](https://github.
   - React-router-redux
   - TypeScript
   
-### App Sample
+### Sample App 
   - Counter
   - Todolist with filter
 
