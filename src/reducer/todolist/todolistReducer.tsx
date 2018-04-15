@@ -1,8 +1,8 @@
 // import { DECREASE_NUM, INCREASE_NUM } from "../action"
-import { ADD_TODO, TODO_ACTION_ALL } from "../action";
-import { ITodo } from "../entity";
+import { ITodo } from "../../entity";
+import { ADD_TODO, Todolist_All } from "./todolistAction";
 
-export function todo(state: ITodo, action: TODO_ACTION_ALL): ITodo {
+export function todo(state: ITodo, action: Todolist_All): ITodo {
     switch (action.type) {
         case ADD_TODO:
             return {
@@ -15,11 +15,7 @@ export function todo(state: ITodo, action: TODO_ACTION_ALL): ITodo {
     }
 }
 
-export function todos(state: ITodo[] = [{
-    complete:false,
-    id:0,
-    text:'123',
-}], action: TODO_ACTION_ALL): ITodo[] {
+export function todos(state: ITodo[] = [], action: Todolist_All): ITodo[] {
     switch (action.type) {
         case ADD_TODO:
             return [...state, todo(state[0], action)];
@@ -28,7 +24,7 @@ export function todos(state: ITodo[] = [{
     }
 }
 
-export function filter(state: string = "", action: TODO_ACTION_ALL): string {
+export function filter(state: string = "", action: Todolist_All): string {
     switch (action.type) {
         default:
             return state;

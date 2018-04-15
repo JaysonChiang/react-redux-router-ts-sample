@@ -1,9 +1,9 @@
 import * as React from "react";
 import { connect, Dispatch } from "react-redux";
-import * as Actions from "../../action";
+import * as Actions from "../../../reducer/todolist/todolistAction";
 
 interface IProps {
-    dispatch: Dispatch<Actions.TODO_ACTION_ALL>;
+    dispatch: Dispatch<Actions.Todolist_All>;
 }
 
 class AddTodo extends React.Component<IProps, {}> {

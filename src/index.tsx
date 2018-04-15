@@ -6,10 +6,10 @@ import { Route } from 'react-router'
 import { ConnectedRouter, routerMiddleware } from 'react-router-redux'
 import { applyMiddleware, createStore } from 'redux'
 
-import App from './component/App'
-import TodoApp from './component/TodoApp'
-import Counter from './container/Counter'
+import App from './App'
 import './css/index.css'
+import Counter from './ProjCounter/container/Counter'
+import TodoApp from './ProjTodolist/component/TodoApp'
 import rootReducer from './reducer'
 
 // Create a history of your choosing (we're using a browser history in this case)
