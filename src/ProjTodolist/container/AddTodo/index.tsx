@@ -1,6 +1,6 @@
 import * as React from "react";
 import { connect, Dispatch } from "react-redux";
-import * as Actions from "../../../reducer/todolist/todolistAction";
+import * as Actions from "../../../action/todolistAction";
 
 interface IProps {
     dispatch: Dispatch<Actions.Todolist_All>;
@@ -41,7 +41,7 @@ class AddTodo extends React.Component<IProps, {}> {
     }
 }
 
-export function mergeProps(stateProps: any, dispatchProps: any, ownProps: any) {
+const mergeProps = (stateProps: any, dispatchProps: any, ownProps: any) => {
     return { ...ownProps, ...stateProps, ...dispatchProps };
 }
 

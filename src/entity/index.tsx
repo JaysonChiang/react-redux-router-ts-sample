@@ -7,7 +7,7 @@ export interface ICounter {
 export interface ITodo {
     id: number;
     text: string;
-    complete: boolean;
+    completed: boolean;
 }
 
 export interface ITodolist {

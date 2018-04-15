@@ -1,6 +1,6 @@
 import { connect, Dispatch } from "react-redux";
+import * as Actions from "../../../action/counterAction";
 import { IStoreState } from "../../../entity";
-import * as Actions from "../../../reducer/counter/counterAction";
 import { CounterComponent } from "../../component";
 
 const mapStateToProps = ({ counter: { value } }: IStoreState) => {
