@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-# Pokedex
+# React-Redux-Router-TS-Sample
 
 ## Features
 ### Library
@@ -8,6 +8,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   - Redux
   - React-router-redux
   - TypeScript
+  
+### App Sample
+  - Counter
+  - Todolist with filter
 
 ### Install
 
