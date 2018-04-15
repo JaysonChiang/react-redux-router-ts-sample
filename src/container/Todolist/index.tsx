@@ -1,18 +1,18 @@
 import { connect, Dispatch } from "react-redux";
 import * as Actions from "../../action";
-import { CounterComponent } from "../../component";
+import { TodolistComponent } from "../../component";
 import { IStoreState } from "../../entity";
 
-export function mapStateToProps({ counter: { value } }: IStoreState) {
-    return {
-        value
-    };
-}
 
-export function mapDispatchToProps(dispatch: Dispatch<Actions.All>) {
+const mapStateToProps = (state: IStoreState) => ({
+    todos: state.todolist.todos
+ } )
+
+export function mapDispatchToProps(
+    dispatch: Dispatch<Actions.TODO_ACTION_ALL>
+) {
     return {
-        onDecrement: () => dispatch(Actions.decreaseNum()),
-        onIncrement: () => dispatch(Actions.increaseNum())
+        addTodo: (text: string) => dispatch(Actions.addTodo(text))
     };
 }
 
@@ -21,5 +21,5 @@ export function mergeProps(stateProps: any, dispatchProps: any, ownProps: any) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(
-    CounterComponent
+    TodolistComponent
 );

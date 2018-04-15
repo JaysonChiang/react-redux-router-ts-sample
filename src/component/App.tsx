@@ -1,5 +1,4 @@
 import * as React from "react";
-import Counter from "../container/Counter";
 
 class App extends React.Component<any, any> {
     constructor(props: any) {
@@ -9,7 +8,8 @@ class App extends React.Component<any, any> {
     public render() {
         return (
             <div>
-                <Counter />
+                <a href="/counter">Go Counter</a>
+                <a href="/todoapp">Go TodoApp</a>
             </div>
         );
     }

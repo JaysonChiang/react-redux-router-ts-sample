@@ -6,7 +6,7 @@ const initState = {
     value: 1
 };
 
-export function value(state: ICounter = initState, action: All): ICounter {
+export function counter(state: ICounter = initState, action: All): ICounter {
     switch (action.type) {
         case INCREASE_NUM:
             return { ...state, value: state.value + 1 };

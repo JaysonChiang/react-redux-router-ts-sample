@@ -1,3 +1,4 @@
 import CounterComponent from "./Counter";
+import TodolistComponent from "./Todolist";
 
-export { CounterComponent };
+export { CounterComponent, TodolistComponent };
