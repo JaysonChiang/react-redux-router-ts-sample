@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+This project was bootstrapped with [Create React App TypeScript](https://github.com/wmonk/create-react-app-typescript).
 
 # React-Redux-Router-TS-Sample
 
