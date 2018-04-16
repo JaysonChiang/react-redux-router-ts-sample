@@ -1,6 +1,6 @@
 /* action type */
 export const ADD_TODO = "ADD_TODO";
-export const TOGGLE_TODO = "TOGGOLE_TODO";
+export const TOGGLE_TODO = "TOGGLE_TODO";
 export const SET_FILTER = "SET_FILTER";
 
 /* others */
@@ -19,7 +19,7 @@ export interface IAddTodo {
 
 export interface IToggleTodo {
     index: number;
-    type: "TOGGOLE_TODO";
+    type: "TOGGLE_TODO";
 }
 
 export interface ISetFilter {

@@ -6,7 +6,7 @@ export default function todos(state: ITodo[], action: Todolist_All): ITodo[] {
     
     switch (action.type) {
         case ADD_TODO:
-            return [...state, todo(state[0], action)]; // todo:should pass => todo(undefined, action)
+            return [...state, todo({}, action)]; // TODO:should pass => todo(undefined, action)
 
         case TOGGLE_TODO:
             return state.map((t, i) => todo(t, action));

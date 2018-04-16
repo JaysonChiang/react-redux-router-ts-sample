@@ -5,9 +5,9 @@ export interface ICounter {
 
 // Todolist
 export interface ITodo {
-    id: number;
-    text: string;
-    completed: boolean;
+    id?: number;
+    text?: string;
+    completed?: boolean;
 }
 
 export interface ITodolist {

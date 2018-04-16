@@ -12,7 +12,7 @@ export default function todo(state: ITodo, action: Todolist_All): ITodo {
             };
 
         case TOGGLE_TODO:
-            if (state === undefined || state.id !== action.index) {
+            if (state.id !== action.index) {
                 return state;
             }
             return {
