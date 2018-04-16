@@ -2,7 +2,7 @@ import createHistory from "history/createBrowserHistory";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import { Route } from "react-router";
+import { Route, Switch } from "react-router";
 import { ConnectedRouter, routerMiddleware } from "react-router-redux";
 import { applyMiddleware, createStore } from "redux";
 
@@ -31,17 +31,19 @@ store.subscribe(() => {
     localStorage.setItem("counter", JSON.stringify(counter));
 });
 
+/* tslint:disable */
 // Now you can dispatch navigation actions from anywhere!
 // store.dispatch(push('/foo'))
 
 ReactDOM.render(
     <Provider store={store}>
         <ConnectedRouter history={history}>
-            <div>
-                <Route exact={true} path="/" component={App} />
-                <Route path="/counter" component={Counter} />
-                <Route path="/todoapp" component={TodoApp} />
-            </div>
+            <App>
+                <Switch>
+                    <Route exact={true} path="/" component={Counter} />
+                    <Route path="/todo" component={TodoApp} />
+                </Switch>
+            </App>
         </ConnectedRouter>
     </Provider>,
     document.getElementById("root") as HTMLElement

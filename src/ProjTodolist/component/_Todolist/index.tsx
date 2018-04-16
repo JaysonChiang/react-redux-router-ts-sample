@@ -3,25 +3,65 @@ import { ITodo } from "../../../entity";
 
 interface IProps {
     todos: ITodo[];
-    onTodoClick: (index: number) => void;
+    onTodoClickComplete: (index: number) => void;
+    onTodoClickEdit: (index: number) => void;
 }
 
 /* tslint:disable */
-const Todolist = ({ todos, onTodoClick }: IProps) => (
-    <div>
-        <ul>
-            {todos.map((todo, idx) => (
-                <li
-                    key={idx}
-                    onClick={() => onTodoClick(idx)}
-                    style={{
-                        textDecoration: todo.completed ? "line-through" : "none"
-                    }}
+const Todolist = ({ todos, onTodoClickComplete, onTodoClickEdit }: IProps) => {
+    const content = (todo: ITodo) => {
+        if (todo.onEdit) {
+            return (
+                <span>
+                    <input
+                        type="text"
+                        value={todo.text}
+                        onChange={() => {
+                            return false;
+                        }}
+                    />
+                    <button onClick={() => onTodoClickEdit(todo.id)}>
+                        Update
+                    </button>
+                </span>
+            );
+        }
+        return (
+            <span>
+                {todo.text}
+                <button
+                    onClick={() => onTodoClickEdit(todo.id)}
+                    disabled={todo.completed}
                 >
-                    {todo.text}
-                </li>
-            ))}
-        </ul>
-    </div>
-);
+                    Edit
+                </button>
+            </span>
+        );
+    };
+
+    return (
+        <div>
+            <ul>
+                {todos.map((todo, idx) => (
+                    <li
+                        key={idx}
+                        style={{
+                            textDecoration: todo.completed
+                                ? "line-through"
+                                : "none"
+                        }}
+                    >
+                        <input
+                            type="checkbox"
+                            checked={todo.completed}
+                            onChange={() => onTodoClickComplete(todo.id)}
+                            disabled={todo.onEdit}
+                        />
+                        {content(todo)}
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+};
 export default Todolist;

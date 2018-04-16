@@ -4,23 +4,29 @@ import { push } from "react-router-redux";
 
 interface IProps {
     dispatch: Dispatch<any>;
+    children: any;
 }
 
 /* tslint:disable */
-const App = ({ dispatch }: IProps) => (
+const App = ({ dispatch, children }: IProps) => (
     <div>
-        <ul>
-            <li>
-                <a href="" onClick={() => dispatch(push("/counter"))}>
-                    Go Counter
-                </a>
-            </li>
-            <li>
-                <a href="" onClick={() => dispatch(push("/todoapp"))}>
-                    Go TodoApp
-                </a>
-            </li>
-        </ul>
+        <nav>
+            <ul>
+                <li>
+                    <a href="" onClick={() => dispatch(push("/"))}>
+                        Go Counter
+                    </a>
+                </li>
+                <li>
+                    <a href="" onClick={() => dispatch(push("/todo"))}>
+                        Go TodoApp
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <section>
+            {children}
+        </section>
     </div>
 );
 

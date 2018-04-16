@@ -5,9 +5,10 @@ export interface ICounter {
 
 // Todolist
 export interface ITodo {
-    id?: number;
+    id: number;
     text?: string;
     completed?: boolean;
+    onEdit?:boolean;
 }
 
 export interface ITodolist {
