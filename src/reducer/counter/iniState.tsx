@@ -1,6 +1,5 @@
-const dataLocalStorage = JSON.parse(localStorage.getItem("counter") as string);
 
-const iniState =  dataLocalStorage || {
+const iniState =  {
     value: 0
 }
 

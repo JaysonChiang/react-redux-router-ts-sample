@@ -3,9 +3,9 @@ import * as Actions from "../../../action/counterAction";
 import { IStoreState } from "../../../entity";
 import { CounterComponent } from "../../component";
 
-const mapStateToProps = ({ counter: { value } }: IStoreState) => {
+const mapStateToProps = (state: IStoreState) => {
     return {
-        value
+        value: state.counter.value
     };
 };
 
