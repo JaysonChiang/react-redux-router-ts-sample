@@ -1,4 +1,4 @@
-import { ADD_TODO, ON_EDIT_TODO, Todolist_All, TOGGLE_TODO } from "../../action/todolistAction";
+import { ADD_TODO, ON_EDIT_TODO, Todolist_All, TOGGLE_TODO, UPDATE_TODO } from "../../action/todolistAction";
 import { ITodo } from "../../entity";
 import todo from './todo'
 
@@ -12,6 +12,9 @@ export default function todos(state: ITodo[], action: Todolist_All): ITodo[] {
             return state.map((t, i) => todo(t, action));
 
         case TOGGLE_TODO:
+            return state.map((t, i) => todo(t, action));
+
+        case UPDATE_TODO:
             return state.map((t, i) => todo(t, action));
 
         default:

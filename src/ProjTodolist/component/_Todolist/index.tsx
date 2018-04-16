@@ -3,12 +3,19 @@ import { ITodo } from "../../../entity";
 
 interface IProps {
     todos: ITodo[];
-    onTodoClickComplete: (index: number) => void;
-    onTodoClickEdit: (index: number) => void;
+    onClickComplete: (index: number) => void;
+    onClickEdit: (index: number) => void;
+    onChangeText: (index: number, text?: string) => void;
 }
 
 /* tslint:disable */
-const Todolist = ({ todos, onTodoClickComplete, onTodoClickEdit }: IProps) => {
+const Todolist = ({
+    todos,
+    onClickComplete,
+    onClickEdit,
+    onChangeText
+}: IProps) => {
+    
     const content = (todo: ITodo) => {
         if (todo.onEdit) {
             return (
@@ -16,27 +23,12 @@ const Todolist = ({ todos, onTodoClickComplete, onTodoClickEdit }: IProps) => {
                     <input
                         type="text"
                         value={todo.text}
-                        onChange={() => {
-                            return false;
-                        }}
+                        onChange={(e) => onChangeText(todo.id, e.target.value)}
                     />
-                    <button onClick={() => onTodoClickEdit(todo.id)}>
-                        Update
-                    </button>
                 </span>
             );
         }
-        return (
-            <span>
-                {todo.text}
-                <button
-                    onClick={() => onTodoClickEdit(todo.id)}
-                    disabled={todo.completed}
-                >
-                    Edit
-                </button>
-            </span>
-        );
+        return <span>{todo.text}</span>;
     };
 
     return (
@@ -54,10 +46,16 @@ const Todolist = ({ todos, onTodoClickComplete, onTodoClickEdit }: IProps) => {
                         <input
                             type="checkbox"
                             checked={todo.completed}
-                            onChange={() => onTodoClickComplete(todo.id)}
+                            onChange={() => onClickComplete(todo.id)}
                             disabled={todo.onEdit}
                         />
                         {content(todo)}
+                        <button
+                            onClick={() => onClickEdit(todo.id)}
+                            disabled={todo.completed}
+                        >
+                            {todo.onEdit ? "Update" : "Edit"}
+                        </button>
                     </li>
                 ))}
             </ul>

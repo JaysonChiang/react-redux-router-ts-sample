@@ -24,8 +24,9 @@ const mapStateToProps = (state: IStoreState) => {
 
 const mapDispatchToProps = (dispatch: Dispatch<Actions.Todolist_All>) => {
     return {
-        onTodoClickComplete: (index: number) => dispatch(Actions.toggleTodo(index)),
-        onTodoClickEdit: (index: number) => dispatch(Actions.onEditTodo(index))
+        onChangeText: (index: number, text:string) => dispatch(Actions.updateTodo(index, text)),
+        onClickComplete: (index: number) => dispatch(Actions.toggleTodo(index)),
+        onClickEdit: (index: number) => dispatch(Actions.onEditTodo(index)),
     };
 };
 
