@@ -9,7 +9,11 @@ interface IProps {
 /* tslint:disable */
 const FilterLink = ({ active, onClick, children }: IProps) => {
     if (active) {
-        return <span>{children}</span>;
+        return (
+            <button className="btn btn-secondary" disabled={true}>
+                {children}
+            </button>
+        );
     }
     return (
         <button
@@ -17,6 +21,7 @@ const FilterLink = ({ active, onClick, children }: IProps) => {
                 e.preventDefault();
                 onClick();
             }}
+            className="btn btn-primary"
         >
             {children}
         </button>

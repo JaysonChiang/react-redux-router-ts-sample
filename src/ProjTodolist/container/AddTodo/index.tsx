@@ -28,15 +28,17 @@ class AddTodo extends React.Component<IProps, {}> {
         };
 
         return (
-            <div>
-                <form onSubmit={handleSubmit}>
+            <section>
+                <div className="row">
+                <form onSubmit={handleSubmit} className="form-group">
                     <input
                         type="text"
                         ref={(input: HTMLInputElement) => (this.input = input)}
                     />
-                    <button type="submit">Add Todo</button>
+                    <button type="submit" className="btn btn-primary">Add Todo</button>
                 </form>
-            </div>
+                </div>
+            </section>
         );
     }
 }

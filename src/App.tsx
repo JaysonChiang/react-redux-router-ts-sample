@@ -10,21 +10,21 @@ interface IProps {
 /* tslint:disable */
 const App = ({ dispatch, children }: IProps) => (
     <div>
-        <nav>
-            <ul>
-                <li>
-                    <a href="" onClick={() => dispatch(push("/"))}>
+        <nav className="navbar navbar-light bg-light">
+            <ul className="nav">
+                <li className="nav-item">
+                    <a href="" onClick={() => dispatch(push("/"))} className="nav-link">
                         Go Counter
                     </a>
                 </li>
-                <li>
-                    <a href="" onClick={() => dispatch(push("/todo"))}>
+                <li className="nav-item">
+                    <a href="" onClick={() => dispatch(push("/todo"))} className="nav-link">
                         Go TodoApp
                     </a>
                 </li>
             </ul>
         </nav>
-        <section>
+        <section className="container">
             {children}
         </section>
     </div>
