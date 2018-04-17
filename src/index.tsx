@@ -9,7 +9,6 @@ import { applyMiddleware, createStore } from "redux";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 import App from "./App";
-import "./css/index.css";
 import Counter from "./ProjCounter/container/Counter";
 import TodoApp from "./ProjTodolist/component/TodoApp";
 import { rootReducer } from "./reducer";

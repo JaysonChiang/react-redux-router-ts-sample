@@ -9,8 +9,9 @@ interface IProps {
 const Counter = ({ value, onIncrement, onDecrement }: IProps) => (
     <div>
         <div className="row">
-            <input type="text" value={value} className="col-sm-2" />
-
+            <input type="text" value={value} className="col-sm-2 text-right" />
+        </div>
+        <div className="row">
             <button
                 type="button"
                 onClick={onIncrement}
