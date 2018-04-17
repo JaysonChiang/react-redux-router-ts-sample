@@ -1,5 +1,4 @@
 import {
-    ADD_TODO,
     ON_EDIT_TODO,
     Todolist_All,
     TOGGLE_TODO,
@@ -9,15 +8,9 @@ import { ITodo } from "../../entity";
 
 export default function todo(state: ITodo, action: Todolist_All): ITodo {
     switch (action.type) {
-        case ADD_TODO:
-            return {
-                completed: false,
-                id: action.id,
-                text: action.text
-            };
 
         case ON_EDIT_TODO:
-            if (state.id !== action.index) {
+            if (state.id !== action.id) {
                 return state;
             }
             return {
@@ -26,7 +19,7 @@ export default function todo(state: ITodo, action: Todolist_All): ITodo {
             };
 
         case TOGGLE_TODO:
-            if (state.id !== action.index) {
+            if (state.id !== action.id) {
                 return state;
             }
             return {

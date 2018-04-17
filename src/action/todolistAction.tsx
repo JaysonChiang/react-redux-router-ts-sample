@@ -1,9 +1,10 @@
 /* action type */
-export const ADD_TODO = "ADD_TODO";
-export const TOGGLE_TODO = "TOGGLE_TODO";
-export const SET_FILTER = "SET_FILTER";
-export const ON_EDIT_TODO = "ON_EDIT_TODO";
-export const UPDATE_TODO = "UPDATE_TODO";
+export const ADD_TODO = "ADD_TODO"
+export const DELETE_TODO = "DELETE_TODO"
+export const TOGGLE_TODO = "TOGGLE_TODO"
+export const SET_FILTER = "SET_FILTER"
+export const ON_EDIT_TODO = "ON_EDIT_TODO"
+export const UPDATE_TODO = "UPDATE_TODO"
 
 /* others */
 export const FILTERS = {
@@ -19,13 +20,18 @@ export interface IAddTodo {
     type: "ADD_TODO";
 }
 
-export interface IOnEditTodo {
+export interface IDeleteTodo {
     index: number;
+    type: "DELETE_TODO"
+}
+
+export interface IOnEditTodo {
+    id: number;
     type: "ON_EDIT_TODO";
 }
 
 export interface IToggleTodo {
-    index: number;
+    id: number;
     type: "TOGGLE_TODO";
 }
 
@@ -39,8 +45,8 @@ export interface IUpdateTodo {
     text: string;
     type: "UPDATE_TODO";
 }
-/* action functions */
 
+/* action creatore  */
 export const addTodo = (text: string): IAddTodo => {
     return {
         id: +Date.now(),
@@ -49,16 +55,23 @@ export const addTodo = (text: string): IAddTodo => {
     };
 };
 
-export const onEditTodo = (index: number): IOnEditTodo => {
+export const deleteTodo = (index: number): IDeleteTodo =>{
     return {
         index,
+        type: DELETE_TODO
+    }
+}
+
+export const onEditTodo = (id: number): IOnEditTodo => {
+    return {
+        id,
         type: ON_EDIT_TODO
     };
 };
 
-export const toggleTodo = (index: number): IToggleTodo => {
+export const toggleTodo = (id: number): IToggleTodo => {
     return {
-        index,
+        id,
         type: TOGGLE_TODO
     };
 };
@@ -80,6 +93,7 @@ export const updateTodo = (id: number, text: string): IUpdateTodo => {
 
 export type Todolist_All =
     | IAddTodo
+    | IDeleteTodo
     | IOnEditTodo
     | IToggleTodo
     | ISetFilter
