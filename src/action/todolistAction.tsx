@@ -15,35 +15,35 @@ export const FILTERS = {
 
 /* action interfaces */
 export interface IAddTodo {
-    id: number;
-    text: string;
-    type: "ADD_TODO";
+    id: number
+    text: string
+    type: typeof ADD_TODO;
 }
 
 export interface IDeleteTodo {
-    index: number;
-    type: "DELETE_TODO"
+    index: number
+    type: typeof DELETE_TODO
 }
 
 export interface IOnEditTodo {
-    id: number;
-    type: "ON_EDIT_TODO";
+    id: number
+    type: typeof ON_EDIT_TODO
 }
 
 export interface IToggleTodo {
-    id: number;
-    type: "TOGGLE_TODO";
+    id: number
+    type: typeof TOGGLE_TODO
 }
 
 export interface ISetFilter {
-    filter: string;
-    type: "SET_FILTER";
+    filter: string
+    type: typeof SET_FILTER
 }
 
 export interface IUpdateTodo {
     id: number;
     text: string;
-    type: "UPDATE_TODO";
+    type: typeof UPDATE_TODO
 }
 
 /* action creatore  */

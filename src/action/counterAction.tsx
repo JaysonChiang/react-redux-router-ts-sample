@@ -2,11 +2,11 @@ export const DECREASE_NUM = "DECREMENT";
 export const INCREASE_NUM = "INCREMENT";
 
 export interface IIncreaseNum {
-    type: string;
+    type: typeof INCREASE_NUM;
 }
 
 export interface IDecreaseNum {
-    type: string;
+    type: typeof DECREASE_NUM;
 }
 
 export const increaseNum = (): IIncreaseNum => {
