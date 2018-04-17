@@ -2,7 +2,6 @@ This project was bootstrapped with [Create React App TypeScript](https://github.
 
 # React-Redux-Router-TS-Sample
 
-## Features
 ### Library
   - React
   - Redux
