@@ -1,8 +1,8 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { History } from 'history';
 
-interface IProps {
+interface IProps extends RouteComponentProps{
   children?: JSX.Element;
   history: History;
 }
