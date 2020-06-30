@@ -34,7 +34,7 @@ class AddTodo extends React.Component<IProps, IState> {
   public render() {
     return (
       <section className="row mt-2 mb-2">
-        <form className="input-group">
+        <div className="input-group">
           <input
             type="text"
             className="form-control"
@@ -42,14 +42,14 @@ class AddTodo extends React.Component<IProps, IState> {
           />
           <div className="input-group-append">
             <button
-              type="submit"
+              type="button"
               className="btn btn-outline-primary"
               onClick={() => this.handleSubmit()}
             >
               Add Todo
             </button>
           </div>
-        </form>
+        </div>
       </section>
     );
   }
