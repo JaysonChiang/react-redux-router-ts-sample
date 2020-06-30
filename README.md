@@ -1,3 +1,5 @@
+[View Sample >>](https://htmlpreview.github.io/?https://github.com/JaysonChiang/react-redux-router-ts-sample/blob/master/build/index.html)
+
 This project was bootstrapped with [Create React App TypeScript](https://github.com/wmonk/create-react-app-typescript).
 
 # React-Redux-Router-TS-Sample
@@ -5,7 +7,7 @@ This project was bootstrapped with [Create React App TypeScript](https://github.
 ### Library
   - React
   - Redux
-  - React-router-redux
+  - React-router-dom
   - TypeScript
   
 ### Sample App 
