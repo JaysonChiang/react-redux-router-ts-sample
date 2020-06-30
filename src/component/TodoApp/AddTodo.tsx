@@ -20,9 +20,8 @@ class AddTodo extends React.Component<IProps, IState> {
     this.setState({ text: value });
   };
 
-  private handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+  private handleSubmit = (): void => {
     const { onAddTodo } = this.props;
-    e.preventDefault();
 
     const { text } = this.state;
 
@@ -34,20 +33,28 @@ class AddTodo extends React.Component<IProps, IState> {
 
   public render() {
     return (
-      <section>
-        <div className="row">
-          <form onSubmit={e => this.handleSubmit(e)} className="form-group">
-            <input type="text" onChange={e => this.onChange(e.target.value)} />
-            <button type="submit" className="btn btn-primary">
+      <section className="row mt-2 mb-2">
+        <form className="input-group">
+          <input
+            type="text"
+            className="form-control"
+            onChange={(e) => this.onChange(e.target.value)}
+          />
+          <div className="input-group-append">
+            <button
+              type="submit"
+              className="btn btn-outline-primary"
+              onClick={() => this.handleSubmit()}
+            >
               Add Todo
             </button>
-          </form>
-        </div>
+          </div>
+        </form>
       </section>
     );
   }
 }
 
 export default connect(null, {
-  onAddTodo: addTodo
+  onAddTodo: addTodo,
 })(AddTodo);

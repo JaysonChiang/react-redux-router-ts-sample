@@ -1,6 +1,8 @@
 {
   "name": "react-redux-router-ts-sample",
   "version": "0.1.0",
+  "homepage": "./",
+  "main": "public/index.html",
   "private": true,
   "dependencies": {
     "bootstrap": "^4.1.0",
