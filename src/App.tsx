@@ -1,25 +1,23 @@
 import React from 'react';
-import { withRouter, RouteComponentProps } from 'react-router-dom';
-import { History } from 'history';
+import { Link } from 'react-router-dom';
 
-interface IProps extends RouteComponentProps {
+interface IProps {
   children?: JSX.Element;
-  history: History;
 }
 
-const App = ({ history, children }: IProps) => (
+const App = ({ children }: IProps) => (
   <div>
     <nav className="navbar navbar-light bg-light">
       <ul className="nav">
         <li className="nav-item">
-          <a href="" onClick={() => history.push('/')} className="nav-link">
+          <Link to="/" className="nav-link">
             Counter
-          </a>
+          </Link>
         </li>
         <li className="nav-item">
-          <a href="" onClick={() => history.push('/todo')} className="nav-link">
+          <Link to="/todo" className="nav-link">
             TodoApp
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>
@@ -29,4 +27,4 @@ const App = ({ history, children }: IProps) => (
   </div>
 );
 
-export default withRouter(App);
+export default App;

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import { applyMiddleware, createStore } from 'redux';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
@@ -24,14 +24,14 @@ store.subscribe(() => {
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
+    <HashRouter>
       <App>
         <Switch>
           <Route path="/todo" component={TodoApp} />
           <Route path="/" component={Counter} />
         </Switch>
       </App>
-    </BrowserRouter>
+    </HashRouter>
   </Provider>,
   document.querySelector('#root')
 );
